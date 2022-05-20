@@ -1,2 +1,2 @@
-# entra21-aulas-orienta-o-objetos
+# entra21-aulas-orientacao-objetos
 Repositório que também será utilizado como workspace no Eclipse

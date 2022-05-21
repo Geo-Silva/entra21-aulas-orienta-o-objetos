@@ -8,7 +8,7 @@ import java.util.Scanner;
 	// chamadas de atributos
 	public String nome;
 	public byte idade;
-	public byte quantidadePresencas; // sempre declarar as variaveis aqui em cima h
+	public byte quantidadePresencas; // sempre declarar as variaveis aqui em cima
 
 	// na declaração só tem acesso e tipo de retorno
 	public Aluno() { // construtor vazio que ao utilizar o (new Aluno) ele é executado

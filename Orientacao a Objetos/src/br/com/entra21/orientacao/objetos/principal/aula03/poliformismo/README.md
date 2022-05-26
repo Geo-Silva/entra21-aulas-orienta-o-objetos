@@ -1,6 +1,6 @@
-#Aprendendo poliformismo
+# Aprendendo poliformismo
 
-##Poliformismo significa "várias formas"
+## Poliformismo significa "várias formas"
 
 > Várias formas de executar o comportamento herdado
 

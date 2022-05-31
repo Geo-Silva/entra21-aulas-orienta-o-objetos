@@ -6,9 +6,20 @@ import br.com.entra21.orientacao.objetos.principal.aula01.classes.Aluno;
 import br.com.entra21.orientacao.objetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
 import br.com.entra21.orientacao.objetos.principal.aula03.poliformismo.Atleta;
 import br.com.entra21.orientacao.objetos.principal.aula03.poliformismo.Nadador;
 import br.com.entra21.orientacao.objetos.principal.aula03.poliformismo.Velocista;
+import br.com.entra21.orientacao.objetos.principal.aula04.conceitosPOO.Ponto;
+import br.com.entra21.orientacao.objetos.principal.aula04.conceitosPOO.Reta;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Alien;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Aviao;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Capivara;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Girafa;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
+import br.com.entra21.orientacao.objetos.principal.aula05.revisao.Revisao;
 
 public class Main {
 
@@ -29,6 +40,9 @@ public class Main {
 			System.out.println("1 - Aprender Classes");
 			System.out.println("2 - Aprender Herança");
 			System.out.println("3 - Aprender Polimorfismo");
+			System.out.println("4 - Aprender Conceitos POO");
+			System.out.println("5 - Aprender Poliformismo com Interface");
+			System.out.println("6 - Revisar POO");
 			opcao = entrada.nextByte();
 
 			switch (opcao) {
@@ -56,6 +70,24 @@ public class Main {
 				aprenderPolimorfismo();
 				
 				break;
+				
+			case 4:
+				
+				aprenderConceitosPOO();
+				
+				break;
+				
+			case 5:
+				
+				aprenderPolimorfismoInterface();
+				
+				break;
+				
+			case 6:
+				
+				revisarPOO();
+				
+				break;
 
 			default:
 
@@ -68,6 +100,8 @@ public class Main {
 		} while (opcao != 0);
 
 	}
+
+
 
 	public static void aprenderClassesObjetos() {
 
@@ -133,7 +167,6 @@ public class Main {
 		
 	}
 
-
 	public static void aprenderPolimorfismo() {
 		
 		//o padrão de poliformismo para comportamentos (métodos) é herdar
@@ -159,7 +192,75 @@ public class Main {
 		
 	}
 	
+	private static void aprenderConceitosPOO() {	
 		
+		//a classe ponto tem alta COESÃO pois ele é preciso nas suas responsabilidades
+		Ponto pontoAlto = new Ponto(30, 10000);
+		Ponto esquerdaBaixo = new Ponto(-20, -500);
+		
+		//a classe reta é AGREGADA por pontos que podem não estar inicilizados
+		//a ASSOCIAÇÃO de reta e ponto é de um para muitos respectivos 	
+		Reta retaUm = new Reta(); //sem pontos inicializados
+		Reta diagonal = new Reta(pontoAlto, esquerdaBaixo); //com pontos inicializados
+		
+		
+		
+		
+	}
 
+	private static void aprenderPolimorfismoInterface() {
 		
+		
+		Humano geovani = new Humano();
+		geovani.setNome("Geovani");
+		geovani.apresentarSe();
+		geovani.alimentar("Pizza");
+		geovani.locomover();
+		geovani.comunicar("Olá!");
+		System.out.println("------------------------------------");
+		
+		Gato vezu = new Gato("Vezu", new Pessoa("Rubem", (byte) 33, ""));
+		
+		vezu.alimentar("Ração");
+		vezu.comunicar("Quero ração");
+		vezu.locomover();
+		System.out.println("------------------------------------");
+		
+		Capivara robson = new Capivara();
+		robson.alimentar("Água");
+		robson.comunicar("");
+		robson.locomover();
+		System.out.println("------------------------------------");
+		
+		Planta maracuja = new Planta("Passiflora edulis Sims");
+		maracuja.alimentar("Carne");
+		maracuja.comunicar("Tá fazendo Sol hoje");
+		maracuja.locomover();
+		System.out.println("------------------------------------");
+		
+		Alien bsjork = new Alien();
+		bsjork.alimentar("Alface");
+		bsjork.comunicar("Só observando...");
+		bsjork.locomover();
+		System.out.println("------------------------------------");
+		
+		Girafa gifa = new Girafa();
+		gifa.alimentar("Carne");
+		gifa.comunicar("Som, testando som");
+		gifa.locomover();
+		System.out.println("------------------------------------");
+		
+		Aviao comercial = new Aviao();
+		comercial.setModelo("Boeing 737");
+
+		System.out.println(comercial.freiar());
+		
+		
+	}
+		
+	private static void revisarPOO() {
+		
+		Revisao.revisar();
+		
+	}
 }
